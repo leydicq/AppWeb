@@ -1,0 +1,43 @@
+<!-- Llamamos el script de encriptación MD5 desde la página de Paul Johnston -->
+<!-- <script src="http://pajhome.org.uk/crypt/md5/2.2/md5-min.js"></script> -->
+ 
+<!-- La encriptación se da a través de la función hex_md5() -->
+<!-- 
+<script type="text/javascript">
+	md5string = hex_md5("cadena a convertir");
+</script>
+-->
+<html>
+<head>
+ 
+<!-- Llamamos el script de encriptación MD5 desde la página de Paul Johnston -->
+<script src="http://pajhome.org.uk/crypt/md5/2.2/md5-min.js"></script>
+ 
+<script<!-- Función para convertir la cadena a MD5 e imprimirla -->
+ type="text/javascript">
+function calcMD5(){
+	document.getElementById('md5string').value = hex_md5(document.getElementById('string').value);
+}
+</script>
+ 
+</head>
+<body>
+ 
+<div align="center" style="width:600px;">
+ 
+<h1> Encriptador MD5 en JavaScript </h1>
+ 
+<!-- Formulario que llama a la función de conversión MD5 -->
+<form method="post" action="javascript:calcMD5();">
+	<textarea id="string" style="width:49%; height:40px; float:left;"></textarea>
+	<textarea id="md5string" disabled="disabled" style="width:49%; height:40px; float:right;"></textarea>
+	<br />
+	<input type="submit" value="Encriptar">
+</form>
+ 
+<a href="http://paulvazo.com/blog/2011/04/encriptacion-md5-en-javascript-google-docs/" target="_blank">[ ver el código fuente ]</a>
+ 
+</div>
+ 
+</body>
+</html>

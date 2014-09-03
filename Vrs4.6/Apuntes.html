@@ -1,0 +1,39 @@
+$("#nombreinstitucion").css("border-color", "red").focus();
+
+---
+
+$consulta   = "SELECT 'S' FROM USUARIOS WHERE USUARIO='".$V_NOM_USUARIO."' AND = 'S'";
+	$resultado  = mysql_query($consulta);
+	//
+	if (mysql_num_rows($resultado) <=0 ){ 
+		$existeux = false;	
+		if ($V_ROL == 'ADMINISTRADOR'){
+			$V_ROL = 1;
+		}else{
+			$V_ROL = 2;
+		}
+	}
+	----------------
+
+
+	                if(v_usuario != ''){
+
+                    <?php
+                        $V_NOM_USUARIO = "<script> document.write(v_usuario) </script>"; 
+
+                        $consulta   = "SELECT ID FROM USUARIOS WHERE USUARIO='".$V_NOM_USUARIO."' AND ESTADO = 'S'";
+                        $resultado  = mysql_query($consulta);
+                        //
+                        if (mysql_num_rows($resultado) > 0){ ?>
+                           <script> alert('El Nombre de Usuario ya existe.'); </script>
+                    <?php    }
+                        
+                        mysql_close($conexion);
+                    ?>
+
+                }
+-----------------------------------------------------------
+onchange="return ValUser(this);" 
+-------------------------------------------------------------
+ <!--    <button  id="b_creaUser" onclick="verificaDatos()" >Guardar</button>
+         <button  id="b_cancelar" onclick="cancelar()" >Cancelar</button> -->
